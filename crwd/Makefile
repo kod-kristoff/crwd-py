@@ -18,6 +18,7 @@ else
 endif
 
 ${info Platform: ${PLATFORM}}
+${info POETRY_VIRTUALVENVS_CREATE: ${POETRY_VIRTUALVENVS_CREATE}}
 ${info Using virtual environment: ${VENV_NAME}}
 
 VENV_BIN = ${VENV_NAME}/bin
