@@ -43,7 +43,7 @@ libs := crwd webapp
 #libs := foundation auctions shipping db_infrastructure web_app_models auctions_infrastructure shipping_infrastructure customer_relationship payments processes main web_app
 
 define install_dev
-	. ${VENV_NAME}/bin/activate; cd $(1); poetry install
+	${INVENV} cd $(1); poetry install
 
 endef
 
