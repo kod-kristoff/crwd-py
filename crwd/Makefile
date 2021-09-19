@@ -1,16 +1,14 @@
 
 PLATFORM := ${shell uname -o}
-INVENV_PATH = ${shell which invenv}
 
 
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
-  ${info invenv: ${INVENV_PATH}}
-  ifeq (${INVENV_PATH},)
-    INVENV = export VIRTUAL_ENV="${VENV_NAME}"; export PATH="${VENV_BIN}:${PATH}"; unset PYTHON_HOME;
+  ifeq (${POETRY_VIRTUALVENVS_CREATE},0)
+    INVENV =
   else
-    INVENV = invenv -C ${VENV_NAME}
+    INVENV = . ${VENV_NAME}/bin/activate;
   endif
 else
   VENV_NAME = ${VIRTUAL_ENV}
@@ -33,6 +31,7 @@ install: venv ${VENV_NAME}/req.installed
 install-dev: venv ${VENV_NAME}/req-dev.installed
 
 ${VENV_NAME}:
+  #ifeq (${POETRY_VIRTUALVENVS_CREATE},0)
 	test -d ${VENV_NAME} || python3 -m venv ${VENV_NAME}
 
 # order of libs is meaningful. First, we install libs without internal dependencies that other libs depend on.
