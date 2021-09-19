@@ -24,4 +24,4 @@ jobs:
     - name: Check logs
       run: docker logs web
     - name: Run test suite
-      run: docker exec web .venv/bin/pytest
+      run: docker exec web pytest
