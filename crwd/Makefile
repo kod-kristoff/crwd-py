@@ -6,8 +6,10 @@ PLATFORM := ${shell uname -o}
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
   ifeq (${POETRY_VIRTUALVENVS_CREATE},0)
+    ${info don't use venv}
     INVENV =
   else
+    ${info use venv}
     INVENV = . ${VENV_NAME}/bin/activate;
   endif
 else
