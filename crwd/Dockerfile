@@ -8,12 +8,12 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 # ENV POETRY_VIRTUALVENVS_IN_PATH 1
-ENV POETRY_VIRTUALVENVS_CREATE 0
+ENV POETRY_VIRTUALENVS_CREATE 0
 ENV POETRY_VERSION 1.1.9
 
 # system deps
 RUN pip install "poetry==$POETRY_VERSION"
-RUN poetry config virtualvenvs.create false
+# RUN poetry config virtualvenvs.create false
 
 # install dependencies
 # RUN pip install --upgrade pip
