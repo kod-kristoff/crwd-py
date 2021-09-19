@@ -13,6 +13,7 @@ ENV POETRY_VERSION 1.1.9
 
 # system deps
 RUN pip install "poetry==$POETRY_VERSION"
+RUN poetry config virtualvenvs.create false
 
 # install dependencies
 # RUN pip install --upgrade pip
