@@ -7,7 +7,11 @@ WORKDIR /usr/src/app
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV POETRY_VIRTUALVENVS_IN_PATH 1
+ENV POETRY_VIRTUALVENVS_IN_PATH 1 \
+    POETRY_VERSION=1.0.0
+
+# system deps
+RUN pip install "poetry==$POETRY_VERSION"
 
 # install dependencies
 # RUN pip install --upgrade pip
