@@ -5,7 +5,7 @@ PLATFORM := ${shell uname -o}
 
 ifeq (${VIRTUAL_ENV},)
   VENV_NAME = .venv
-  ifeq (${POETRY_VIRTUALVENVS_CREATE},0)
+  ifeq (${POETRY_VIRTUALENVS_CREATE},0)
     ${info don't use venv}
     INVENV =
   else
@@ -18,7 +18,7 @@ else
 endif
 
 ${info Platform: ${PLATFORM}}
-${info POETRY_VIRTUALVENVS_CREATE: ${POETRY_VIRTUALVENVS_CREATE}}
+${info POETRY_VIRTUALENVS_CREATE: ${POETRY_VIRTUALENVS_CREATE}}
 ${info Using virtual environment: ${VENV_NAME}}
 
 VENV_BIN = ${VENV_NAME}/bin
