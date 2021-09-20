@@ -22,4 +22,4 @@ jobs:
     - name: Check running containers
       run: docker ps -a
     - name: Run test suite
-      run: docker exec web pytest -vv
+      run: docker-compose exec web pytest -vv
