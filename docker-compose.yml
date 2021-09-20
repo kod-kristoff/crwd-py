@@ -5,7 +5,7 @@ services:
   web:
     build: ./crwd
     ports:
-      - 8004:8000
+      - 8005:8000
     command: uvicorn webapp.app:app --host 0.0.0.0 --reload
     volumes:
-      - ./project:/usr/src/app
+      - ./crwd:/usr/src/app
